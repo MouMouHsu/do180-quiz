@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DO180 Quiz · OpenShift 4.22 Practice Questions</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-inner"><span class="home">DO180 Quiz</span></div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Red Hat OpenShift Administration I · DO180 · OpenShift 4.22</p>
+    <h1>DO180 OpenShift 4.22 練習題</h1>
+    <p class="desc">每章簡報 50 題英文單選題，附中文答案說明，共 7 章、350 題。</p>
+  </section>
+  <ul class="cards">
+  <li><a class="card" href="ch01.html">
+    <span class="tag">CH01</span>
+    <span class="card-title">Introduction to Kubernetes and OpenShift</span>
+    <span class="card-desc">Container 與 Kubernetes 特性、OpenShift Edition 與 EUS、Web Console 導覽與 Cluster 監控</span>
+    <span class="card-meta" data-key="CH01">50 題</span>
+  </a></li>
+  <li><a class="card" href="ch02.html">
+    <span class="tag">CH02</span>
+    <span class="card-title">Kubernetes and OpenShift Command-line Interfaces and APIs</span>
+    <span class="card-desc">kubectl 與 oc、oc login 驗證方式、API Resource 與輸出過濾、Operator、Metrics、Events、Node 與 Pod 疑難排解</span>
+    <span class="card-meta" data-key="CH02">50 題</span>
+  </a></li>
+  <li><a class="card" href="ch03.html">
+    <span class="tag">CH03</span>
+    <span class="card-title">Run Applications as Containers and Pods</span>
+    <span class="card-desc">oc run 與 Restart Policy、UID／GID 與 Pod Security、CRI-O 與 crictl、Image Registry 與 UBI、Skopeo、oc image 與疑難排解工具</span>
+    <span class="card-meta" data-key="CH03">50 題</span>
+  </a></li>
+  <li><a class="card" href="ch04.html">
+    <span class="tag">CH04</span>
+    <span class="card-title">Deploy Managed and Networked Applications on Kubernetes</span>
+    <span class="card-desc">Template 與 oc new-app、命令式與宣告式、Job／CronJob／Deployment／DaemonSet／StatefulSet、Service 與 DNS、Route、Ingress 與 Gateway API</span>
+    <span class="card-meta" data-key="CH04">50 題</span>
+  </a></li>
+  <li><a class="card" href="ch05.html">
+    <span class="tag">CH05</span>
+    <span class="card-title">Manage Storage for Application Configuration and Data</span>
+    <span class="card-desc">ConfigMap 與 Secret、Volume 類型與 Access Mode、PV／PVC 與 Dynamic Provisioning、Storage Class 屬性、StatefulSet 與 Headless Service</span>
+    <span class="card-meta" data-key="CH05">50 題</span>
+  </a></li>
+  <li><a class="card" href="ch06.html">
+    <span class="tag">CH06</span>
+    <span class="card-title">Configure an Application for Reliability</span>
+    <span class="card-desc">High Availability 與 restartPolicy、Startup／Readiness／Liveness Probe、Resource Requests 與 Allocatable、Limits 與 OOMKilled、In-place Resize、HPA 與 VPA</span>
+    <span class="card-meta" data-key="CH06">50 題</span>
+  </a></li>
+  <li><a class="card" href="ch07.html">
+    <span class="tag">CH07</span>
+    <span class="card-title">Manage Application Updates</span>
+    <span class="card-desc">Image Tag 與 SHA ID、imagePullPolicy、RollingUpdate 與 Recreate、Rollout 與 Rollback、Image Stream、定期匯入與 Pull-through、Image Trigger 與 Tag 別名</span>
+    <span class="card-meta" data-key="CH07">50 題</span>
+  </a></li>
+  </ul>
+</main>
+<footer class="foot"><div class="wrap">練習題依 DO180 (OpenShift 4.22) 課程簡報編寫，非 Red Hat 官方考題。</div></footer>
+<script>
+document.querySelectorAll('.card-meta').forEach(function(el){
+  try {
+    var s = JSON.parse(localStorage.getItem('do180quiz-' + el.dataset.key) || 'null');
+    if (s && s.graded) el.textContent = '50 題 · 上次得分 ' + s.score + ' / 50';
+  } catch (e) {}
+});
+</script>
+</body>
+</html>
